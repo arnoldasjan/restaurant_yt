@@ -439,31 +439,71 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80.0,
+      height: 70.0,
       child: Stack(
-        fit: StackFit.expand,
         children: <Widget>[
           Container(
-            height: 80.0,
-            child: Row(
-              children: <Widget>[
-                Icon(FontAwesomeIcons.home),
-                Icon(FontAwesomeIcons.bookmark),
-                Icon(FontAwesomeIcons.bell),
-                Icon(FontAwesomeIcons.user),
-              ],
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+            height: 70.0,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Icon(
+                    FontAwesomeIcons.home,
+                    size: 25.0,
+                    color: Color(0xFF5663FF),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 80.0),
+                    child: Icon(
+                      FontAwesomeIcons.bookmark,
+                      size: 25.0,
+                      color: Color(0xFF6E7FAA),
+                    ),
+                  ),
+                  Icon(
+                    FontAwesomeIcons.bell,
+                    size: 25.0,
+                    color: Color(0xFF6E7FAA),
+                  ),
+                  Icon(
+                    FontAwesomeIcons.user,
+                    size: 25.0,
+                    color: Color(0xFF6E7FAA),
+                  ),
+                ],
+              ),
             ),
           ),
           Align(
-            alignment: FractionalOffset.topCenter,
+            alignment: Alignment(0, -12.0),
             child: Container(
-              height: 70.0,
-              width: 70.0,
+              height: 65.0,
+              width: 65.0,
               decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color(0xFF5663FF),
+                  shape: BoxShape.circle,
+                  color: Color(0xFF5663FF),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color(0xFF5663FF),
+                        blurRadius: 10.0,
+                        offset: Offset(
+                          0,
+                          5.0,
+                        ))
+                  ]),
+              child: IconButton(
+                icon: Icon(
+                  Icons.add,
+                  color: Colors.white,
+                  size: 45.0,
+                ),
+                onPressed: (){},
               ),
-              child: Icon(Icons.add, color: Colors.white, size: 45.0,),
             ),
           ),
         ],
